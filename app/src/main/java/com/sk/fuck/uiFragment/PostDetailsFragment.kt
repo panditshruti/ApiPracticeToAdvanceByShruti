@@ -9,39 +9,32 @@ import com.sk.fuck.R
 import com.sk.fuck.adapter.PostDetailsAdapter
 import com.sk.fuck.databinding.FragmentPostDetailsBinding
 import com.sk.fuck.model.PostDetailsModel
+import com.sk.fuck.model.PostTagModel
 
 class PostDetailsFragment : Fragment(R.layout.fragment_post_details) {
     private var _binding: FragmentPostDetailsBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var postDetailsModel: PostDetailsModel
+    private lateinit var postTagModel: PostTagModel
     private lateinit var postDetailsAdapter: PostDetailsAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         _binding = FragmentPostDetailsBinding.bind(view)
 
-        postDetailsModel = ViewModelProvider(this)[PostDetailsModel::class.java]
-        postDetailsModel.getPostDetails(arguments?.getString("tag")!!)
+        postTagModel = ViewModelProvider(this)[PostTagModel::class.java]
+        val tag = arguments?.getString("tag") ?: return
 
-        postDetailsModel.postDetailsLiveData.observe(viewLifecycleOwner) {
+        postTagModel.getPost()
 
-            if (it != null) {
+        postTagModel.postLiveData.observe(viewLifecycleOwner) { postDetails ->
+            postDetails?.let {
                 postDetailsAdapter = PostDetailsAdapter(it.posts)
                 binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
                 binding.recyclerView.adapter = postDetailsAdapter
             }
-
         }
-
     }
-//
-//    override fun onUserProfileListener(id: String) {
-//        val action = UrlPostTagFragmentDirections.actionUrlPostTagFragmentToUserProfileFragment(id)
-//        findNavController().navigate(action)
-//    }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

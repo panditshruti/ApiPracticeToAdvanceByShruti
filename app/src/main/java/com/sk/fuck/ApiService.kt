@@ -11,6 +11,6 @@ interface ApiService {
     @GET("posts")
     fun getPostTag(): Call<Post>
 
-    @GET("{tag}")
+    @GET("posts")
     fun getPostDetails(@Path("tag") tag:String):Call<Post>
 }

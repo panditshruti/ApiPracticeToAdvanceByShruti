@@ -34,6 +34,8 @@ class HomeFragment : Fragment(R.layout.fragment_home), PostTagClickListner {
             if (post != null) {
                 postAdapter = PostAdapter(post.posts, this)
                 binding.recyclerView.adapter = postAdapter
+            } else {
+                Toast.makeText(requireContext(), "No posts available", Toast.LENGTH_SHORT).show()
             }
         }
     }

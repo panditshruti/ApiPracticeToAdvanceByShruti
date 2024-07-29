@@ -5,63 +5,50 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Post Title -->
     <TextView
         android:id="@+id/postTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:text="lsdfkjdlskfj"
+        android:text="Title"
         android:textColor="@color/black"
-        android:layout_marginBottom="8dp"/>
+        android:textAppearance="?attr/textAppearanceHeadline6" />
 
-    <!-- Post Body -->
     <TextView
         android:id="@+id/postBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="8dp"/>
-
-    <LinearLayout
-        android:id="@+id/post_tags"
+        android:text="Body"
+        android:textColor="@color/black"
+        android:paddingTop="8dp" />
+    <TextView
+        android:id="@+id/postTag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="8dp">
-        <!-- Tags will be dynamically added here -->
-    </LinearLayout>
+        android:text="Body"
+        android:textColor="@color/black"
+        android:paddingTop="8dp" />
 
-    <!-- Post Details (views, reactions, user) -->
-    <LinearLayout
+    <TextView
+        android:id="@+id/post_views"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:textColor="@color/black"
+        android:text="Views"
+        android:paddingTop="8dp" />
 
-        <TextView
-            android:id="@+id/post_views"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textColor="@android:color/darker_gray"
-            android:layout_marginRight="16dp"/>
+    <TextView
+        android:id="@+id/post_reactions"
+        android:layout_width="wrap_content"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        android:text="Reactions"
+        android:paddingTop="8dp" />
 
-        <TextView
-            android:id="@+id/post_reactions"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textColor="@android:color/darker_gray"
-            android:layout_marginRight="16dp"/>
-
-        <TextView
-            android:id="@+id/post_user"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textColor="@android:color/darker_gray"/>
-    </LinearLayout>
+    <TextView
+        android:id="@+id/post_user"
+        android:layout_width="wrap_content"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        android:text="User"
+        android:paddingTop="8dp" />
 </LinearLayout>
