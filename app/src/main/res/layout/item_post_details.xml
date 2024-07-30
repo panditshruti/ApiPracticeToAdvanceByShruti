@@ -25,6 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Body"
+        android:textStyle="bold"
         android:textColor="@color/black"
         android:paddingTop="8dp" />
 
@@ -33,14 +34,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
+        android:background="#00A006"
         android:text="Views"
+        android:padding="10dp"
+        android:layout_gravity="end"
         android:paddingTop="8dp" />
 
     <TextView
         android:id="@+id/post_reactions"
         android:layout_width="wrap_content"
-        android:textColor="@color/black"
+        android:textColor="#C50000"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
         android:text="Reactions"
         android:paddingTop="8dp" />
 
@@ -50,5 +55,8 @@
         android:textColor="@color/black"
         android:layout_height="wrap_content"
         android:text="User"
+        android:background="#45D0CF"
+        android:padding="10dp"
+        android:layout_gravity="end"
         android:paddingTop="8dp" />
 </LinearLayout>
