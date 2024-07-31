@@ -4,14 +4,16 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sk.fuck.R
 import com.sk.fuck.adapter.PostDetailsAdapter
+import com.sk.fuck.click.UserProfileClickListner
 import com.sk.fuck.databinding.FragmentPostDetailsBinding
 import com.sk.fuck.model.PostDetailsModel
 import com.sk.fuck.model.PostTagModel
 
-class PostDetailsFragment : Fragment(R.layout.fragment_post_details) {
+class PostDetailsFragment : Fragment(R.layout.fragment_post_details),UserProfileClickListner {
     private var _binding: FragmentPostDetailsBinding? = null
     private val binding get() = _binding!!
 
@@ -29,7 +31,7 @@ class PostDetailsFragment : Fragment(R.layout.fragment_post_details) {
 
         postTagModel.postLiveData.observe(viewLifecycleOwner) { postDetails ->
             postDetails?.let {
-                postDetailsAdapter = PostDetailsAdapter(it.posts)
+                postDetailsAdapter = PostDetailsAdapter(it.posts,this)
                 binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
                 binding.recyclerView.adapter = postDetailsAdapter
             }
@@ -38,5 +40,11 @@ class PostDetailsFragment : Fragment(R.layout.fragment_post_details) {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onUserProfileClickListner(tag: String) {
+        val action = PostDetailsFragmentDirections.actionPostDetailsFragmentToProfileFragment()
+        findNavController().navigate(action)
+
     }
 }

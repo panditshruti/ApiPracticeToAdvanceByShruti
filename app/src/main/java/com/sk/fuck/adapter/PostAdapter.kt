@@ -3,7 +3,7 @@ package com.sk.fuck.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.sk.fuck.PostTagClickListner
+import com.sk.fuck.click.PostTagClickListner
 import com.sk.fuck.databinding.ItemPostBinding
 import com.sk.fuck.db.PostX
 

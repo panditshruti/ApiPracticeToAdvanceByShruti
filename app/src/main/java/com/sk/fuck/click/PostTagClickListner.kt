@@ -1,4 +1,4 @@
-package com.sk.fuck
+package com.sk.fuck.click
 
 interface PostTagClickListner {
 

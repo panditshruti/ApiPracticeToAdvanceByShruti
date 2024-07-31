@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.sk.fuck.PostTagClickListner
+import com.sk.fuck.click.PostTagClickListner
 import com.sk.fuck.R
 import com.sk.fuck.adapter.PostAdapter
 import com.sk.fuck.databinding.FragmentHomeBinding
